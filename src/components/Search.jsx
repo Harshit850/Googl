@@ -7,12 +7,13 @@ import { Links } from './Links';
 export const Search = () => {
   const [text, setText] = useState('Elon Musk');
   const { setSearchTerm } = useResultContext();
-  const { debouncedValue } = useDebounce(text, 300);
+  const { debouncedValue } = useDebounce(text, 3000);
 
   useEffect(() => {
     if (debouncedValue) {
       setSearchTerm(debouncedValue);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [debouncedValue]);
 
   return (

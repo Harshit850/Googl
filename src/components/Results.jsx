@@ -17,6 +17,7 @@ export const Results = () => {
         getResults(`${location.pathname}/q=${searchTerm}&num=40`);
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchTerm, location.pathname]);
 
   if (isLoading) return <Loading />;
@@ -98,6 +99,4 @@ export const Results = () => {
     default:
       return 'ERROR';
   }
-
-  return <h1> Results</h1>;
 };
